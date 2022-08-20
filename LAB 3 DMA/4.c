@@ -34,7 +34,7 @@ int main()
         printf("INVALID DAY! Give a valida day\n");
         goto error;
     }
-    if(y_in.month=2 && y_in.day>28 && flag==0)
+    if(y_in.month==2 && y_in.day>28 && flag==0)
     {
         printf("INVALID DAY! Give a valida day\n");
         goto error;

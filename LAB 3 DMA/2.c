@@ -26,11 +26,11 @@ int main()
     sum.second= (ptr+1)->second+(ptr+0)->second;
     sum.minute=(ptr+0)->minute+(ptr+1)->minute;
     sum.hour=(ptr+0)->hour+(ptr+1)->hour;
-    if(sum.second>=59)
-       { sum.second=0;
+    if(sum.second>59)
+       { sum.second=(sum.second-60);
         sum.minute++;}
-    if(sum.minute>=59)
-        {sum.minute=0;
+    if(sum.minute>59)
+        {sum.minute=(sum.minute-60);
         sum.hour++;}
     printf("\nThe sum of your timings is %d:%d:%d\n",sum.hour,sum.minute,sum.second);
 
