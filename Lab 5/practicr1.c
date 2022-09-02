@@ -1,0 +1,1 @@
+// develop an algo for accesing amn A[i][j] where i>=j
