@@ -23,12 +23,28 @@ int main()
         {
             head=(node*)malloc(sizeof(node));
             new_node=head;
+
+            printf("Name of student: ");
+            scanf("%s",head->name);
+            printf("Roll Number: ");
+            scanf("%d",&head->roll_number);
+            printf("Branch: ");
+            scanf("%s",head->branch);
             head->link=NULL;
+            printf("\n");
         }
         else
         {
             new_node->link=(node*) malloc(sizeof(node));
             new_node=new_node->link;
+
+            printf("Name of student: ");
+            scanf("%s",new_node->name);
+            printf("Roll Number: ");
+            scanf("%d",&new_node->roll_number);
+            printf("Branch: ");
+            scanf("%s",new_node->branch);
+            printf("\n");
             new_node->link=NULL;
         }
         n--;
@@ -36,27 +52,12 @@ int main()
 
     //     CAN WE INPUT OUR DATA WHILE ALSO CREATING THE NODES?
     
-
-    temp=head;
-    // Fetching data from the user and assigning them
-    for(int i=0;i<count;i++)   // OR YOU CAN USE A WHILE LOOP THAT CHECKS IF temp->link is NULL or not.
-    {
-        printf("Name of student %d: ",i+1);
-        scanf("%s",temp->name);
-        printf("Roll Number: ");
-        scanf("%d",&temp->roll_number);
-        printf("Branch: ");
-        scanf("%s",temp->branch);
-        temp=temp->link;
-        printf("\n");
-    }
-    
     temp=head;
     printf("DISPLAYING THE FETCHED DATA\n");
     // Displaying fetched data
     for(int i=0;i<count;i++)
     {
-        printf("\nName of student %s: ",temp->name);
+        printf("\nName of studen: %s",temp->name);
         printf("\nRoll Number: %d",temp->roll_number);
         printf("\nBranch: %s\n\n",temp->branch);
         temp=temp->link;
