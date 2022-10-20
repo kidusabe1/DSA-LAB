@@ -1,0 +1,15 @@
+implement stack using 2 queues 
+implement queue using 2 stacks
+
+HE5.1 WAP to implement a stack which will support three additional operations in addition to push
+and pop by modifying LE5.1.
+a) peekLowestElement()
+//return the lowest element in the stack without removing it from the stack
+b) peekHighestElement()
+//return the highset element in the stack without removing it from the stack
+c) peekMiddleElement()
+//return the (size/2 +1)th lowest element in the stack without removing it from the
+stack.
+HE5.3 WAP to reverse a stack with using extra stack.
+HE5.4 WAP to sort the elements inside a stack using only push and pop opperation. Any number of
+additional stacks may be used

@@ -5,28 +5,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int count_sub_elements(int *brr,int a, int b)
+int count_sub_elements(int *brr,int a, int b,int size)
 {
     int count=0;
-    int size=(sizeof(brr)/sizeof(int));
-    for(int i=0;i<size;i++)
+    for(int i=0;i<11;i++)
     {
-        if(brr[i]==a)
+        if(brr[i]>=a && brr[i]<=b)
         {
             count++;
-            while(brr[i]!=b)
-            {
-                count++;
-                i++;
-            }
-            return count;
         }
     }
+    return count;
+
 }
 
 int main()
 {
-    int arr[]={1,2,2,3,4,5,6,7,8,9,10};
-    printf("%d\n",count_sub_elements(arr,2,10));
+    int arr[]={1,2,22,-33,-4,5,60,7,8,9,7};
+    int a, b;
+    printf("Give the value for starting and ending point:\n");
+    scanf("%d%d",&a,&b);
+    int size=sizeof(arr)/sizeof(int);
+    printf("There are %d numbers between %d and %d\n",count_sub_elements(arr,a,b,size),a,b);
     return 0;
 }

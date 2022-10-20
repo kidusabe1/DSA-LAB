@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-int non_zero_count(int arr[][3],int m)
+int non_zero_count(int **arr,int m)
 {
     int count=0;
     for(int i=0;i<m;i++)
@@ -20,7 +20,7 @@ int non_zero_count(int arr[][3],int m)
     return count;
 }
 
-int sum_above_leading_diagonal(int arr[][3],int m)
+int sum_above_leading_diagonal(int **arr,int m)
 {
     int sum=0;
     for(int i=0;i<m;i++)
@@ -36,15 +36,29 @@ int sum_above_leading_diagonal(int arr[][3],int m)
     return sum;
 }
 
-void display_elements_below_minor_diagonal(int arr[][3],int m)
+void display_elements_below_minor_diagonal(int **arr,int m)
 {
     for(int i=0;i<m;i++)
     {
-        printf("%d ",arr[i][m-i-1]);
+        if(i!=m-1)
+            printf("%d ",arr[i+1][m-i-1]);
+    }
+}
+// To access the minor elements
+void Display_elements_below_minor_diagonal(int **arr,int m)
+{
+    int k;
+    for (int i=m-1,k=0;i>=0;i--,k++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            if(j>k)
+                printf("%d ",arr[i][j]);
+        }
     }
 }
 
-int product_diagonal_elements(int arr[][3], int m)
+int product_diagonal_elements(int **arr, int m)
 {
     int product=1;
     for(int i=0;i<m;i++)
@@ -62,15 +76,34 @@ int product_diagonal_elements(int arr[][3], int m)
 
 int main()
 {
-    int arr[][3]={
-        {1,2,4},
-        {0,2,4},
-        {0,0,5}
-    };
-    printf("%d\n",non_zero_count(arr,3));
-    printf("%d\n",sum_above_leading_diagonal(arr,3));
-    display_elements_below_minor_diagonal(arr,3);
+    int *dARR[3]; // creating 3 pointers that will save the base address of the 3 rows
+    for(int i=0;i<3;i++) // a for loop that will allocate memory for the 3 pointers
+    {
+        dARR[i]=(int*)malloc(3*sizeof(int));
+    }
+
+    // taking input for the dynamic matrix
+    printf("Give values for 3x3 matrix\n");
+    for(int i=0;i<3;i++)
+        for(int j=0;j<3;j++)
+            scanf("%d",&dARR[i][j]);
+
+    printf("For the matrix below:\n");
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            printf("%d ",dARR[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("There are %d non zero elements\n",non_zero_count(dARR,3));
+    printf("Sum of elements above the leading diagonal: %d\n",sum_above_leading_diagonal(dARR,3));
+    printf("The Elements below the minor diagonal are: ");
+    Display_elements_below_minor_diagonal(dARR,3);
     printf("\n");
-    printf("%d\n",product_diagonal_elements(arr,3));
+    printf("The product of the main diagonal elements is: %d\n",product_diagonal_elements(dARR,3));
+
     return 0;
 }
