@@ -82,11 +82,6 @@ void display2()
     }
 }
 
-void compare_popped_with_sorted_stack(int popped, int top)
-{
-    
-}
-
 void sort_stack()
 {
     int temp;
@@ -127,14 +122,14 @@ void sort_stack()
 int main()
 {
     push1(1);  
-    push1(5);
-    push1(1);
-    push1(13);
-    push1(1);
-    push1(43);
-    push1(1);
-    push1(21);
+    push1(2);
+    push1(23);
     push1(0);
+    push1(4);
+    push1(6);
+    push1(11);
+    push1(2);
+    push1(22);
     push1(1);
     display1();
     printf("\n");

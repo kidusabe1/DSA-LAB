@@ -63,7 +63,6 @@ int peek_lowest_element()
         {
             iterator--;
         }
-        printf("%d\n",smallest);
     }
     return smallest;
 }
@@ -91,7 +90,7 @@ int peek_middle_element()
     if(top==-1)
     {
         printf("Undeflow");
-        return -1;
+        return -1;` `   
     }
     return stack[top/2];
 }
@@ -99,46 +98,14 @@ int peek_middle_element()
 int main()
 {
     int stack[10];
-    int choice;
-    do
+    for(int i=0;i<10;i++)
     {
-        printf("Choose one of the folowing operations\n");
-        printf("1. Push On to stack\n");
-        printf("2. Pop from stack\n");
-        printf("3. Peek Lowest Element\n");
-        printf("4. Peek Highest Element\n");
-        printf("5. Peek Middle Element\n");
-        printf("6. Exit\n");
-        printf("Choice: ");
-        scanf("%d",&choice);
-        int n;
-    switch (choice)
-    {
-    case 1:
-        printf("Give data: ");
-        scanf("%d",&n);
-        push(n);
-        break;
-    case 2:
-        pop();
-        break;
-    case 3:
-        printf("The lowest number in stack is: %d\n",peek_lowest_element());
-        break;
-    case 4:
-        printf("The highest number in stack is: %d\n",peek_highest_element());
-        break;
-    case 5:
-        printf("The middle number in stack is: %d\n",peek_middle_element());
-        break;
-    case 6:
-        printf("Exiting...");
-        break;
-    default:
-        printf("Give valid option\n");
-        break;
+        push(i);
     }
-    } while(choice!=6);    
+    printf("The lowest number in stack is: %d\n",peek_lowest_element());
+    printf("The highest number in stack is: %d\n",peek_highest_element());
+    printf("The middle number in stack is: %d\n",peek_middle_element());
+    printf("Exiting...");  
     display();
     return 0;
 
