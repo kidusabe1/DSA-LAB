@@ -1,0 +1,5 @@
+write a program to sort n names in alphabetical order
+wap using recursion to search an element using linear searcha nd binary search 
+WAP where the numbers are sorted according to hundredth place
+WAP to sort the unique numbers from the array 
+WAP where the first half is in descending order and second half is ascending order

@@ -117,14 +117,11 @@ void displayQ()
 
 int main()
 {
-    for(int i=0;i<=N-1;i++)
+    for(int i=0;i<N-1;i++)
     {
         enqueue_back(i);
     }
-
-    printf("%d ",dequeue_back());
-
-    printf("%d ",dequeue_front());
+    enqueue_front(56);
     displayQ();
     printf("\n");
     displayQ();
